@@ -1,0 +1,32 @@
+.input__form--border{
+
+  border-radius: 15px;
+  border: 3px solid #1c5d57;
+
+}
+
+.input__focus{
+  border: 3px solid #4abe4a;
+}
+
+
+.input__form--border > input{
+
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+
+  padding: 0.3rem 2rem;
+  outline: 0;
+  border: 0;
+  background: none;
+  width: 100%;
+  border-radius: 15px;
+}
+
+
+.input__form--border > input::placeholder{
+  color: rgb(143, 143, 143);
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+}
