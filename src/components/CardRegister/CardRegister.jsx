@@ -15,10 +15,15 @@ export const CardRegister = () => {
 
   const handleSetInputValue = (propertie, value) => {
     if (Object.keys(initialState).includes(propertie)) {
-      const newState = { ...initialState };
+      const newState = { ...inputValues };
       newState[propertie] = value;
       setInputValues(newState);
     }
+  };
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    console.log(event);
   };
 
   return (
@@ -53,7 +58,7 @@ export const CardRegister = () => {
             }}
           ></InputForm>
 
-          <CButton text="Registarme"></CButton>
+          <CButton click={handleClick} text="Registarme"></CButton>
         </form>
       </section>
     </>

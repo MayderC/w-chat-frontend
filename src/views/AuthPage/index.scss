@@ -1,0 +1,51 @@
+.auth-forms {
+  display: flex;
+}
+
+.auth-items {
+  min-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-forms > .item--img {
+  width: 50%;
+}
+
+.auth-forms > .item--img > img {
+  display: block;
+  max-height: 70%;
+}
+
+.main-auth {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 65vh;
+}
+
+.navegation-auth {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navegation-item span {
+  color: #c5c5c5;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.auth-forms {
+  width: 80%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.current-form {
+  text-decoration: underline 3px #c2c2c2;
+  text-underline-offset: 2px;
+}

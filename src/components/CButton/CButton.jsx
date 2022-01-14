@@ -1,13 +1,16 @@
-import './index.scss'
+import "./index.scss";
 
-
-export const CButton = ({text}) => {
+export const CButton = ({ text, click }) => {
   return (
     <>
-      <input 
-        className='c-button'
+      <input
+        type="submit"
+        className="c-button"
         value={text}
+        onClick={(event) => {
+          click(event);
+        }}
       ></input>
     </>
-  )
-}
+  );
+};
