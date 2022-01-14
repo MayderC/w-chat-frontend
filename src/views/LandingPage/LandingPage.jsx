@@ -11,9 +11,6 @@ export const LandingPage = () => {
   return (
     <>
       <main className="landing">
-        <div className="landing_item item--img">
-          <img src={imgHome} alt="" />
-        </div>
         <div className="landing_item">
           <div className="landing_text">
             <h1>My chat</h1>
@@ -23,6 +20,9 @@ export const LandingPage = () => {
               get start
             </NavLink>
           </div>
+        </div>
+        <div className="landing_item item--img">
+          <img src={imgHome} alt="" />
         </div>
       </main>
     </>
