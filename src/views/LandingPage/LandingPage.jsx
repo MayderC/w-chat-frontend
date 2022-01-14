@@ -4,10 +4,6 @@ import { useNavigate, NavLink } from "react-router-dom";
 import "./index.scss";
 
 export const LandingPage = () => {
-  const ToAuth = (e) => {
-    useNavigate("/auth");
-  };
-
   return (
     <>
       <main className="landing">
