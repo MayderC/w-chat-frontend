@@ -34,6 +34,7 @@ export const CardLogin = () => {
               type: "text",
               propInState: "username",
               handleSetInputValue,
+              autofocus: true,
             }}
           ></InputForm>
 
@@ -43,6 +44,7 @@ export const CardLogin = () => {
               type: "password",
               propInState: "password",
               handleSetInputValue,
+              autofocus: false,
             }}
           ></InputForm>
 

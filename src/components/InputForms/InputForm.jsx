@@ -22,6 +22,7 @@ export const InputForm = ({ props }) => {
           }
           type={props.type}
           placeholder={props.placeholder}
+          autoFocus={props.autofocus}
         />
       </div>
     </>

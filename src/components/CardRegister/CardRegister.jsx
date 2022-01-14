@@ -37,6 +37,7 @@ export const CardRegister = () => {
               placeholder: "Username",
               propInState: "username",
               handleSetInputValue,
+              autofocus: true,
             }}
           ></InputForm>
 
@@ -46,6 +47,7 @@ export const CardRegister = () => {
               placeholder: "@email",
               propInState: "email",
               handleSetInputValue,
+              autofocus: false,
             }}
           ></InputForm>
 
@@ -55,6 +57,7 @@ export const CardRegister = () => {
               placeholder: "Contraseña",
               propInState: "password",
               handleSetInputValue,
+              autofocus: false,
             }}
           ></InputForm>
 
