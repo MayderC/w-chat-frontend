@@ -16,9 +16,9 @@ export const AuthPage = () => {
       <main className="main-auth">
         <div className="auth-forms">
           <div className="auth-items item--img">
-            <img src={imgAuth} alt="" srcset="" />
+            <img src={imgAuth} alt="" />
           </div>
-          <div className="auth-items">
+          <div className="auth-items item--form">
             <div className="navegation-auth">
               <div className="navegation-item">
                 <span
