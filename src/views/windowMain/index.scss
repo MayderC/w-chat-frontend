@@ -1,10 +1,26 @@
 .window-main {
-  width: 94%;
-  height: 93vh;
+  width: calc(100% - 20px);
+  height: calc(100vh - 20px);
+
   background-color: #101d24;
   background-color: #274555;
   border-radius: 15px;
 
   display: grid;
-  place-items: center;
+  grid-template-columns: 0.9fr 1.2fr 1.1fr;
+  grid-template-rows: 60px calc(100vh - 80px);
+  gap: 0px 0px;
+  grid-template-areas:
+    "topbar topbar topbar"
+    "sidebar chat chat";
+}
+
+.topbar {
+  grid-area: topbar;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.chat {
+  grid-area: chat;
 }
