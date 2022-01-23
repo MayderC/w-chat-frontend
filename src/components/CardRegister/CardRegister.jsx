@@ -2,65 +2,24 @@ import { useState } from "react";
 import { InputForm } from "../InputForms/InputForm";
 import { CButton } from "../CButton/CButton";
 import "./index.scss";
-
-const initialState = {
-  username: "",
-  email: "",
-  password: "",
-  rePassword: "",
-};
+import { useCardRegister } from "./index";
 
 export const CardRegister = () => {
-  const [inputValues, setInputValues] = useState(initialState);
-
-  const handleSetInputValue = (propertie, value) => {
-    if (Object.keys(initialState).includes(propertie)) {
-      const newState = { ...inputValues };
-      newState[propertie] = value;
-      setInputValues(newState);
-    }
-  };
-
-  const handleClick = (event) => {
-    event.preventDefault();
-    console.log(event);
-  };
+  const {
+    propsInputEmail,
+    propsInputPassword,
+    propsInputUsername,
+    handleClick,
+  } = useCardRegister();
 
   return (
     <>
       <section>
         <form className="card-register">
           <h2>Registarse</h2>
-          <InputForm
-            props={{
-              type: "text",
-              placeholder: "Username",
-              propInState: "username",
-              handleSetInputValue,
-              autofocus: true,
-            }}
-          ></InputForm>
-
-          <InputForm
-            props={{
-              type: "text",
-              placeholder: "@email",
-              propInState: "email",
-              handleSetInputValue,
-              autofocus: false,
-            }}
-          ></InputForm>
-
-          <InputForm
-            props={{
-              type: "text",
-              placeholder: "Contraseña",
-              propInState: "password",
-              handleSetInputValue,
-              autofocus: false,
-            }}
-          ></InputForm>
-
+          <InputForm props={propsInputUsername}></InputForm>
+          <InputForm props={propsInputEmail}></InputForm>
+          <InputForm props={propsInputPassword}></InputForm>
           <CButton click={handleClick} text="Registarme"></CButton>
         </form>
       </section>
