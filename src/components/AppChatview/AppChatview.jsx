@@ -1,10 +1,14 @@
-import React, { useState } from "react";
-import "./index.scss";
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { InputMessage } from "../InputMessagge/InputMessage";
+import "./index.scss";
 
 export const AppChatview = () => {
   const [Message, setMessage] = useState({ msg: "" });
+
+  const handleSetInputValue = ({ target }) => {
+    setMessage({ ...Message, msg: target.value });
+  };
 
   return (
     <>
@@ -15,7 +19,10 @@ export const AppChatview = () => {
           </Routes>
         </div>
         <div className="message_input">
-          <InputMessage></InputMessage>
+          <button>file</button>
+          <button>emoji</button>
+          <InputMessage props={{ handleSetInputValue }}></InputMessage>
+          <button>Enviar</button>
         </div>
       </main>
     </>

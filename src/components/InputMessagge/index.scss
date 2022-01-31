@@ -1,0 +1,18 @@
+.wrapper_inputmsg,
+.wrapper_inputmsg > input {
+  width: 100%;
+}
+
+.wrapper_inputmsg {
+}
+
+.wrapper_inputmsg > input {
+  outline: 0;
+  border: 0;
+  height: 45px;
+  border-radius: 10px;
+  padding: 0 1.5rem;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}

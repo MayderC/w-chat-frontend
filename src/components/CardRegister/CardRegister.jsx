@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { InputForm } from "../InputForms/InputForm";
 import { CButton } from "../CButton/CButton";
 import "./index.scss";
