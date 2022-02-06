@@ -4,8 +4,6 @@ import { Route, Routes } from "react-router-dom";
 import { InputMessage } from "../InputMessagge/InputMessage";
 
 export const AppChatview = () => {
-  const [Message, setMessage] = useState({ msg: "" });
-
   return (
     <>
       <main className="main_chat">

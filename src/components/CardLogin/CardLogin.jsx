@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { CButton } from "../CButton/CButton";
 import { InputForm } from "../InputForms/InputForm";
-import { useState } from "react";
+import { login } from "../../api/auth";
 import "./index.scss";
 
 export const CardLogin = () => {
@@ -11,15 +12,20 @@ export const CardLogin = () => {
 
   const handleSetInputValue = (propertie, value) => {
     if (Object.keys(inputsValue).includes(propertie)) {
-      const newState = { ...inputsValue };
-      newState[propertie] = value;
-      setInputsValue(newState);
+      setInputsValue({ ...inputsValue, [propertie]: value });
     }
   };
 
-  const handleClickCButton = (event) => {
+  const handleClickCButton = async (event) => {
     event.preventDefault();
-    console.log(event);
+
+    const user = {
+      username: inputsValue.username,
+      password: inputsValue.password,
+    };
+
+    const resp = await login(user);
+    console.log(resp);
   };
 
   return (

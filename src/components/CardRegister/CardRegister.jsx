@@ -1,29 +1,35 @@
 import { useState } from "react";
 import { InputForm } from "../InputForms/InputForm";
 import { CButton } from "../CButton/CButton";
+import { register } from "../../api/auth";
 import "./index.scss";
 
 const initialState = {
   username: "",
-  email: "",
   password: "",
-  rePassword: "",
+  rpassword: "",
 };
 
 export const CardRegister = () => {
   const [inputValues, setInputValues] = useState(initialState);
+  const [buttonText, setButtonText] = useState("Registrarme");
 
   const handleSetInputValue = (propertie, value) => {
     if (Object.keys(initialState).includes(propertie)) {
-      const newState = { ...inputValues };
-      newState[propertie] = value;
-      setInputValues(newState);
+      setInputValues({ ...inputValues, [propertie]: value });
     }
   };
 
-  const handleClick = (event) => {
+  const handleClick = async (event) => {
     event.preventDefault();
-    console.log(event);
+
+    const user = {
+      username: inputValues.username,
+      password: inputValues.password,
+    };
+
+    const resp = await register(user);
+    console.log(resp);
   };
 
   return (
@@ -44,18 +50,17 @@ export const CardRegister = () => {
           <InputForm
             props={{
               type: "text",
-              placeholder: "@email",
-              propInState: "email",
+              placeholder: "Contraseña",
+              propInState: "password",
               handleSetInputValue,
               autofocus: false,
             }}
           ></InputForm>
-
           <InputForm
             props={{
               type: "text",
-              placeholder: "Contraseña",
-              propInState: "password",
+              placeholder: "Repite la contraseña",
+              propInState: "rpassword",
               handleSetInputValue,
               autofocus: false,
             }}
