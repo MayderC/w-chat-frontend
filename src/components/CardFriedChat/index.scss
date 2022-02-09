@@ -1,0 +1,50 @@
+.card__friendchat {
+  border-top: 1px solid rgba(128, 128, 128, 0.5);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+  height: 80px;
+  width: 100%;
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+}
+
+.card__img {
+  width: 50px;
+  height: 50px;
+}
+
+.card__img img {
+  display: block;
+  max-width: 100%;
+}
+
+.card__info {
+  height: 70px;
+  width: 409px;
+  padding: 0 0 0 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card__info .name {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.card__info > .message_preview {
+  width: 85%;
+  height: 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: rgb(165, 165, 165);
+}
+
+.card__info .message_date {
+  position: absolute;
+  right: 0;
+  top: 10px;
+}

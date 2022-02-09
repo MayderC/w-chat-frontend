@@ -31,3 +31,19 @@ export const register = async (user) => {
     return null;
   }
 };
+
+export const verify = async (token) => {
+  try {
+    const response = await fetch(`${URL}/verify`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: token,
+      },
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    return null;
+  }
+};

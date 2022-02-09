@@ -1,20 +1,39 @@
 .window-main {
-  width: calc(100% - 20px);
-  height: calc(100vh - 20px);
-
+  width: 90%;
   background-color: #101d24;
   background-color: #274555;
 
   background-color: #0a1014;
-  border-radius: 15px;
+  border-radius: 3px;
+  max-height: calc(100vh - 46px);
+  overflow: hidden;
 
   display: grid;
-  grid-template-columns: 0.9fr 1.2fr 1.1fr;
-  grid-template-rows: 60px calc(100vh - 80px);
+  grid-template-columns: 0.6fr 1.4fr;
+  grid-template-rows: calc(100vh - 46px);
   gap: 0px 0px;
   grid-template-areas:
-    "topbar topbar topbar"
+    "sidebar chat chat"
     "sidebar chat chat";
+}
+
+.friends__chat_container {
+  padding: 10px 10px;
+  overflow-y: scroll;
+  max-height: calc(100vh - 194px);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar__search__friends {
+  height: 70px;
+
+  background-color: #202c33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .topbar {

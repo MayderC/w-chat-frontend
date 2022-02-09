@@ -1,5 +1,22 @@
 .main_chat {
   width: 100%;
   height: 100%;
-  background-color: blue;
+  background-color: #222e35;
+  position: relative;
+}
+
+.main_chat-img > img {
+  position: absolute;
+  width: 300px;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.message_view {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
 }

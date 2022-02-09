@@ -1,11 +1,14 @@
+import { useContext } from "react";
+import { Context } from "../../context/Context";
 import "./index.scss";
-import React from "react";
 
 export const AppTopbar = () => {
+  const context = useContext(Context);
+
   return (
     <>
       <nav className="topbar_chat">
-        <h1>top bar</h1>
+        <p>{context.PROFILE.username}</p>
       </nav>
     </>
   );

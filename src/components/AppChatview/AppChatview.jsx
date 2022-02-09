@@ -1,19 +1,16 @@
-import React, { useState } from "react";
 import "./index.scss";
-import { Route, Routes } from "react-router-dom";
-import { InputMessage } from "../InputMessagge/InputMessage";
+import { Outlet } from "react-router-dom";
+import chatPreviewImg from "../../assets/img/chatpreview.svg";
 
 export const AppChatview = () => {
   return (
     <>
       <main className="main_chat">
-        <div className="message_view">
-          <Routes>
-            <Route path="/:id" element={<h1> chat adsffff</h1>}></Route>
-          </Routes>
+        <div className="main_chat-img">
+          <img src={chatPreviewImg} alt="" srcSet="" />
         </div>
-        <div className="message_input">
-          <InputMessage></InputMessage>
+        <div className="message_view">
+          <Outlet></Outlet>
         </div>
       </main>
     </>
