@@ -19,4 +19,29 @@
   flex-direction: column;
   position: relative;
   height: 100%;
+  background-color: blue;
+  position: relative;
+}
+
+.message_input {
+  height: 80px;
+  width: 80%;
+  margin: auto;
+  position: relative;
+  top: calc(100% - 80px);
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message_view {
+  position: absolute;
+}
+
+.message_input button {
+  background-color: red;
+  height: 45px;
+  width: 60px;
+  border-radius: 10px;
 }
