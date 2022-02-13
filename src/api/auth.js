@@ -1,4 +1,4 @@
-const URL = "http://localhost:3001/api/auth";
+const URL = "http://192.168.100.86:3001/api/auth";
 
 export const login = async (user) => {
   try {
@@ -17,6 +17,7 @@ export const login = async (user) => {
 };
 
 export const register = async (user) => {
+  console.log(JSON.stringify(user));
   try {
     const response = await fetch(`${URL}/register`, {
       method: "POST",
@@ -28,7 +29,8 @@ export const register = async (user) => {
     const data = response.json();
     return data;
   } catch (error) {
-    return null;
+    console.log(error);
+    return false;
   }
 };
 

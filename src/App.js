@@ -8,6 +8,7 @@ import { PrivateChat } from "./components/PrivateChat/PrivateChat";
 import { getToken, clearLocalStorage } from "./helpers/useLocalStorage";
 import { verify } from "./api/auth";
 import { Context } from "./context/Context";
+import { SocketProvider } from "./context/socket/SocketProvider";
 import "./assets/sass/index.sass";
 
 export const App = () => {
@@ -19,16 +20,15 @@ export const App = () => {
     if (!token) {
       navigate("/");
     }
-
     if (token) {
       verify(token).then((res) => {
-        if (res.msg === "Error") {
-          navigate("/auth");
-          clearLocalStorage();
-        } else {
+        if (res.username) {
           context.setToken(token);
           context.setProfile({ ...res });
           navigate("/app");
+        } else if (res.msg) {
+          navigate("/auth");
+          clearLocalStorage();
         }
       });
     }
@@ -40,7 +40,15 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage></LandingPage>}></Route>
         <Route path="/auth" element={<AuthPage></AuthPage>}></Route>
-        <Route path="/app/*" element={<WindowMain></WindowMain>}>
+
+        <Route
+          path="/app/*"
+          element={
+            <SocketProvider>
+              <WindowMain />
+            </SocketProvider>
+          }
+        >
           <Route index element={<AppChatview></AppChatview>}></Route>
           <Route path=":id" element={<PrivateChat></PrivateChat>}></Route>
         </Route>

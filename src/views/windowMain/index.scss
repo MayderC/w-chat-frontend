@@ -36,6 +36,10 @@
   justify-content: center;
 }
 
+.sidebar__search__friends > .input__form--border > input {
+  width: 475px;
+}
+
 .topbar {
   grid-area: topbar;
 }

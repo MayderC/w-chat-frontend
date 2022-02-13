@@ -20,6 +20,7 @@ export const InputForm = ({ props }) => {
           onChange={(event) =>
             handleSetInputValue(propInState, event.target.value)
           }
+          value={props.value}
           type={props.type}
           placeholder={props.placeholder}
           autoFocus={props.autofocus}

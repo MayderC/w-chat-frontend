@@ -16,7 +16,7 @@ export const CardRegister = () => {
   const {
     propsInputPassword,
     propsInputUsername,
-    propsInputRepeatPassword,
+    //propsInputRepeatPassword,
     inputValues,
   } = useCardRegister();
 
@@ -27,10 +27,13 @@ export const CardRegister = () => {
       password: inputValues.password,
     };
 
-    console.log(user);
+    console.log(user.username, user.password);
+
     setButtonText("Cargando...");
     const resp = await register(user);
     setButtonText("Registrarme");
+    if (resp.msg || !resp) return;
+
     setToken(resp.data.token);
     setProfile(resp.data.user);
     setItemLocalStorage("token", resp.data.token);
@@ -41,10 +44,9 @@ export const CardRegister = () => {
     <>
       <section>
         <form className="card-register">
-          <h2>Registarse</h2>
+          <h2>Registrarse</h2>
           <InputForm props={propsInputUsername}></InputForm>
           <InputForm props={propsInputPassword}></InputForm>
-          <InputForm props={propsInputRepeatPassword}></InputForm>
           <CButton click={handleClick} text={buttonText}></CButton>
         </form>
       </section>

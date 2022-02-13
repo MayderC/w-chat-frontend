@@ -3,10 +3,14 @@ import {
   SET_MESSAGES_FRIEND,
   SET_PROFILE,
   SET_TOKEN,
+  SET_SOCKET,
 } from "./Types";
 
 export const Reducer = (state, action) => {
   switch (action.type) {
+    case SET_SOCKET:
+      return { ...state, SOCKET: action.payload };
+
     case SET_FRIENDS:
       return { ...state, FRIENDS: action.payload };
     case SET_MESSAGES_FRIEND:

@@ -1,27 +1,21 @@
-import { useReducer, useCallback } from "react";
+import { useReducer, useCallback, useState } from "react";
 import { Context } from "./Context";
-import {
-  SET_FRIENDS,
-  SET_MESSAGES_FRIEND,
-  SET_PROFILE,
-  SET_TOKEN,
-} from "./Types";
+
+import { SET_FRIENDS, SET_MESSAGES_FRIEND, SET_PROFILE } from "./Types";
 import { Reducer } from "./Reducer";
 
 const initialState = {
   FRIENDS: [],
   MESSAGES_FRIEND: [],
   PROFILE: {},
-  TOKEN: "",
 };
 
 export const ContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(Reducer, initialState);
-
+  const [TOKEN, setTokenSatate] = useState("");
   const setToken = useCallback((token) => {
-    //get tokenfrom localStorage, if is null return and cancel
-
-    dispatch({ type: SET_TOKEN, payload: token });
+    setTokenSatate(token);
+    //dispatch({ type: SET_TOKEN, payload: token });
   }, []);
 
   const setProfile = useCallback((profile) => {
@@ -33,6 +27,7 @@ export const ContextProvider = ({ children }) => {
       <Context.Provider
         value={{
           ...state,
+          TOKEN,
           setToken,
           setProfile,
         }}
