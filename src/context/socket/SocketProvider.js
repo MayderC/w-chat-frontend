@@ -7,14 +7,14 @@ export const SocketProvider = ({ children }) => {
   const { TOKEN } = useContext(Context);
   const [socket, setSocket] = useState(() => {
     return io("http://localhost:3001", {
-      query: { token: TOKEN },
+      auth: { token: TOKEN },
     });
   });
 
   useEffect(() => {
     setSocket(() =>
       io("http://localhost:3001", {
-        query: { token: TOKEN },
+        auth: { token: TOKEN },
       })
     );
   }, [TOKEN]);

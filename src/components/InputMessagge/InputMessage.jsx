@@ -7,14 +7,15 @@ import { socketContext } from "../../context/socket/SocketContext";
 export const InputMessage = ({ props }) => {
   const [Message, setMessage] = useState({ msg: "" });
   const { socket } = useContext(socketContext);
-
   const handleSetInputValue = (target, value) => {
     setMessage({ msg: value });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    socket.emit("send-message", Message);
+    socket.emit("send-message", Message, (msg) => {
+      props.handleSetnewMessage(msg);
+    });
     setMessage({ msg: "" });
   };
 
