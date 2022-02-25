@@ -31,9 +31,6 @@ export const PrivateChat = () => {
     document
       .getElementById("windowMsg")
       .scrollTo(0, document.getElementById("windowMsg").scrollHeight);
-
-    console.log("Scroll");
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -45,9 +42,6 @@ export const PrivateChat = () => {
 
   useEffect(() => {
     setData((data) => [...data, newMsg]);
-
-    //scroll down
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [newMsg]);
 
@@ -58,7 +52,7 @@ export const PrivateChat = () => {
   return (
     <>
       <TopbarPrivateChat></TopbarPrivateChat>
-      <div id="chat" className="private__main">
+      <div className="private__main">
         <div id="windowMsg" ref={windowMsg} className="messages_container">
           {data[0]?.message &&
             data.map((item) => {
