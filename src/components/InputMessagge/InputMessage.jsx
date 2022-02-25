@@ -22,6 +22,7 @@ export const InputMessage = ({ props }) => {
   return (
     <>
       <form
+        className="form_input_message"
         onSubmit={(e) => {
           handleSubmit(e);
         }}

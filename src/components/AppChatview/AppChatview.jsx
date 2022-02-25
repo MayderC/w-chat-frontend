@@ -9,7 +9,9 @@ export const AppChatview = () => {
       <main className="main_chat">
         <div className="main_chat-img">
           <img src={chatPreviewImg} alt="" srcSet="" />
-          <Link to="/app/global">Join global chat</Link>
+          <Link className="join_global" to="/app/global">
+            Join global chat
+          </Link>
         </div>
 
         <div className="message_view">

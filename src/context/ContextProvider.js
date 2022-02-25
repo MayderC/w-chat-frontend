@@ -1,12 +1,10 @@
 import { useReducer, useCallback, useState } from "react";
 import { Context } from "./Context";
 
-import { SET_FRIENDS, SET_MESSAGES_FRIEND, SET_PROFILE } from "./Types";
+import { SET_PROFILE } from "./Types";
 import { Reducer } from "./Reducer";
 
 const initialState = {
-  FRIENDS: [],
-  MESSAGES_FRIEND: [],
   PROFILE: {},
 };
 

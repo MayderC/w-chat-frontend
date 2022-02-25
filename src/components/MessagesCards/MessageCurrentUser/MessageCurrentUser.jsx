@@ -1,11 +1,12 @@
-import React from "react";
+import "./index.scss";
 
-export const MessageCurrentUser = () => {
+export const MessageCurrentUser = ({ prop }) => {
   return (
     <>
-      <h1></h1>
-      <h1></h1>
-      <h1></h1>
+      <div className="msg_current_user">
+        <p className="username">Me : {prop.username}</p>
+        <p className="msg">{prop.message}</p>
+      </div>
     </>
   );
 };

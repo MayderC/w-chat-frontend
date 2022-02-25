@@ -5,6 +5,16 @@
   position: relative;
 }
 
+a.join_global {
+  background-color: #41d15e;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+}
+
 .main_chat-img > img {
   position: absolute;
   width: 300px;

@@ -22,10 +22,10 @@
   overflow-y: scroll;
   max-height: calc(100vh - 194px);
 }
-
+/*
 ::-webkit-scrollbar {
   display: none;
-}
+}*/
 
 .sidebar__search__friends {
   height: 70px;
@@ -47,5 +47,7 @@
   grid-area: sidebar;
 }
 .chat {
+  max-height: calc(100vh - 46px);
+  position: relative;
   grid-area: chat;
 }

@@ -27,8 +27,6 @@ export const CardRegister = () => {
       password: inputValues.password,
     };
 
-    console.log(user.username, user.password);
-
     setButtonText("Cargando...");
     const resp = await register(user);
     setButtonText("Registrarme");

@@ -1,4 +1,4 @@
-const URL = "http://192.168.100.86:3001/api/auth";
+const URL = process.env.REACT_APP_BACKEND_URL + "/api/auth";
 
 export const login = async (user) => {
   try {
@@ -17,7 +17,6 @@ export const login = async (user) => {
 };
 
 export const register = async (user) => {
-  console.log(JSON.stringify(user));
   try {
     const response = await fetch(`${URL}/register`, {
       method: "POST",

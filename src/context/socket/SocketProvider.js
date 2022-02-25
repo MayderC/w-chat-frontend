@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import { socketContext } from "./SocketContext";
 import { io } from "socket.io-client";
 import { Context } from "../Context";
@@ -6,14 +6,14 @@ import { Context } from "../Context";
 export const SocketProvider = ({ children }) => {
   const { TOKEN } = useContext(Context);
   const [socket, setSocket] = useState(() => {
-    return io("http://localhost:3001", {
+    return io(process.env.REACT_APP_BACKEND_URL, {
       auth: { token: TOKEN },
     });
   });
 
   useEffect(() => {
     setSocket(() =>
-      io("http://localhost:3001", {
+      io(process.env.REACT_APP_BACKEND_URL, {
         auth: { token: TOKEN },
       })
     );

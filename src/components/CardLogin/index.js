@@ -1,4 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { login } from "../../api/auth";
+import { Context } from "../../context/Context";
+import { setItemLocalStorage } from "../../helpers/useLocalStorage";
 
 export const UseCardLogin = () => {
   const initialSatate = {
@@ -6,18 +10,29 @@ export const UseCardLogin = () => {
     password: "",
   };
 
+  const navigate = useNavigate();
+
+  const context = useContext(Context);
   const [inputsValue, setInputsValue] = useState(initialSatate);
 
   const handleSetInputValue = (propertie, value) => {
     if (Object.keys(inputsValue).includes(propertie)) {
-      const newState = { ...inputsValue };
-      newState[propertie] = value;
-      setInputsValue(newState);
+      setInputsValue({ ...inputsValue, [propertie]: value });
     }
   };
 
-  const handleClickCButton = (event) => {
+  const handleClickCButton = async (event) => {
     event.preventDefault();
+    const response = await login(inputsValue);
+
+    if (response?.msg) {
+      return;
+    }
+
+    context.setToken(response.data.token);
+    setItemLocalStorage("token", response.data.token);
+    context.setProfile(response.data.user);
+    navigate("/app/");
   };
 
   const propsPasswordInput = {

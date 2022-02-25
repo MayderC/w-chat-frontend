@@ -4,15 +4,18 @@ import { MessageCurrentUser } from "../MessagesCards/MessageCurrentUser/MessageC
 import { TopbarPrivateChat } from "../TopbarPrivateChat/TopbarPrivateChat";
 import { socketContext } from "../../context/socket/SocketContext";
 import "./index.scss";
+import { Context } from "../../context/Context";
 import { MessageAnotherUser } from "../MessagesCards/MessageAnotherUser/MessageAnotherUser";
 
 export const PrivateChat = () => {
   const { socket } = useContext(socketContext);
+  const { PROFILE } = useContext(Context);
   const [data, setData] = useState([]);
   const [newMsg, setNewMsg] = useState({});
 
   useEffect(() => {
     socket.emit("join-global");
+
     socket.on("joined", (response) => {
       const myData = JSON.parse(response);
       setData([...myData.messages]);
@@ -20,13 +23,15 @@ export const PrivateChat = () => {
 
     socket.on("message", (msg) => {
       // sokcet no tiene acceso al estado, pero si a la funcion set.
-      // se setea un nuevo valor, y se observa ese estado, cuando cambia, se iserta al array de mensajes
+      // se setea un nuevo valor, y se observa el estado (newMsg) en el siguiente UseEffect, cuando cambia se inserta al array de mensajes
       setNewMsg({ ...JSON.parse(msg) });
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     setData([...data, newMsg]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [newMsg]);
 
   const handleSetnewMessage = (msg) => {
@@ -37,15 +42,22 @@ export const PrivateChat = () => {
     <>
       <TopbarPrivateChat></TopbarPrivateChat>
       <div className="private__main">
-        <MessageCurrentUser></MessageCurrentUser>
-
-        {data[0]?.message &&
-          data.map((item) => (
-            <MessageAnotherUser
-              key={item.id_message}
-              prop={item}
-            ></MessageAnotherUser>
-          ))}
+        <div className="messages_container">
+          {data[0]?.message &&
+            data.map((item) => {
+              return item.username === PROFILE.username ? (
+                <MessageCurrentUser
+                  key={item.id_message}
+                  prop={item}
+                ></MessageCurrentUser>
+              ) : (
+                <MessageAnotherUser
+                  key={item.id_message}
+                  prop={item}
+                ></MessageAnotherUser>
+              );
+            })}
+        </div>
       </div>
       <InputMessage props={{ handleSetnewMessage }}></InputMessage>
     </>

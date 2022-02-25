@@ -1,18 +1,26 @@
 .private__main {
-  height: calc(100% - 160px);
+  max-height: calc(100vh - 160px);
   position: relative;
+}
+.messages_container {
+  padding: 40px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  max-height: calc(100vh - 220px);
+  overflow-y: scroll;
 }
 
 .private__main::before {
   content: "";
   position: absolute;
   background-image: url(../../assets/img/private_back.png);
-  opacity: 0.08;
   background-color: #2a4f69;
   width: 100%;
-  height: 100%;
-}
-.msg_another_user > .msg {
-  color: rgb(255, 255, 255);
-  font-size: 1.5rem;
+  opacity: 0.08;
+  overflow-y: scroll;
+  height: calc(100vh - 200px);
+  max-height: calc(100vh - 200px);
+  z-index: -1;
 }

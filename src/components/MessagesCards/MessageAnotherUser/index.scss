@@ -1,0 +1,17 @@
+.msg_another_user {
+  background-color: #202c33;
+  width: 430px;
+  height: auto;
+  border-radius: 10px;
+  padding: 0.3rem 1rem;
+  font-weight: bold;
+}
+
+.msg_another_user > .username {
+  color: rgb(168, 168, 168);
+}
+
+.msg_another_user > .msg {
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+}
