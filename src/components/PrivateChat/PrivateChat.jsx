@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import { InputMessage } from "../InputMessagge/InputMessage";
 import { MessageCurrentUser } from "../MessagesCards/MessageCurrentUser/MessageCurrentUser";
 import { TopbarPrivateChat } from "../TopbarPrivateChat/TopbarPrivateChat";
@@ -12,6 +12,7 @@ export const PrivateChat = () => {
   const { PROFILE } = useContext(Context);
   const [data, setData] = useState([]);
   const [newMsg, setNewMsg] = useState({});
+  const windowMsg = useRef();
 
   useEffect(() => {
     socket.emit("join-global");
@@ -26,11 +27,27 @@ export const PrivateChat = () => {
       // se setea un nuevo valor, y se observa el estado (newMsg) en el siguiente UseEffect, cuando cambia se inserta al array de mensajes
       setNewMsg({ ...JSON.parse(msg) });
     });
+
+    document
+      .getElementById("windowMsg")
+      .scrollTo(0, document.getElementById("windowMsg").scrollHeight);
+
+    console.log("Scroll");
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    setData([...data, newMsg]);
+    document
+      .getElementById("windowMsg")
+      .scrollTo(0, document.getElementById("windowMsg").scrollHeight);
+  }, [data]);
+
+  useEffect(() => {
+    setData((data) => [...data, newMsg]);
+
+    //scroll down
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [newMsg]);
 
@@ -41,8 +58,8 @@ export const PrivateChat = () => {
   return (
     <>
       <TopbarPrivateChat></TopbarPrivateChat>
-      <div className="private__main">
-        <div className="messages_container">
+      <div id="chat" className="private__main">
+        <div id="windowMsg" ref={windowMsg} className="messages_container">
           {data[0]?.message &&
             data.map((item) => {
               return item.username === PROFILE.username ? (
