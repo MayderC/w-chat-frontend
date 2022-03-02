@@ -14,6 +14,7 @@ export const UseCardLogin = () => {
 
   const context = useContext(Context);
   const [inputsValue, setInputsValue] = useState(initialSatate);
+  const [btnText, setBtnText] = useState("Login");
 
   const handleSetInputValue = (propertie, value) => {
     if (Object.keys(inputsValue).includes(propertie)) {
@@ -23,12 +24,21 @@ export const UseCardLogin = () => {
 
   const handleClickCButton = async (event) => {
     event.preventDefault();
+    console.log("login");
+    setBtnText("Cargando..");
     const response = await login(inputsValue);
-
+    console.log(response);
     if (response?.msg) {
+      setBtnText("Error");
+
+      setTimeout(() => {
+        setBtnText("Login");
+      }, 1200);
+
       return;
     }
 
+    setBtnText("Login");
     context.setToken(response.data.token);
     setItemLocalStorage("token", response.data.token);
     context.setProfile(response.data.user);
@@ -51,5 +61,10 @@ export const UseCardLogin = () => {
     autofocus: true,
   };
 
-  return { propsPasswordInput, propsUsernameInput, handleClickCButton };
+  return {
+    propsPasswordInput,
+    propsUsernameInput,
+    handleClickCButton,
+    btnText,
+  };
 };

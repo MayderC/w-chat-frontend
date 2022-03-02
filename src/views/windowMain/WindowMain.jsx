@@ -7,7 +7,7 @@ import "./index.scss";
 
 export const WindowMain = () => {
   const handleSetInputValue = (value) => {};
-  const test = [1, 2, 3, 4, 5, 6];
+  const test = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
   return (
     <>
       <main className="window-main">
