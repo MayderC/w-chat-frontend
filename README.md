@@ -13,15 +13,15 @@ La applicacion es muy lenta debido a los servidores, que son gratuitos para proy
 
 Página principal
 
-<img src="./2.png">
+<img src="./home.png">
 
 Página de autenticacion
 
-<img src="./3.PNG">
+<img src="./auth.png">
 
 Página de chats
 
-<img src="./1.PNG">
+<img src="./chat.png">
 
 ## Scripts
 
