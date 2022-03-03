@@ -17,11 +17,11 @@ Página principal
 
 Página de autenticacion
 
-<img src="./3.png">
+<img src="./3.PNG">
 
 Página de chats
 
-<img src="./1.png">
+<img src="./1.PNG">
 
 ## Scripts
 
