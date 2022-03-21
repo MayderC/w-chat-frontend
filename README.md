@@ -8,8 +8,10 @@
 - Socket io
 - Scss, Sass
 
+
 link: https://frosty-mayer-9c261d.netlify.app/
 La applicacion es muy lenta debido a los servidores, que son gratuitos para proyectos personales.
+Repo backend: https://github.com/MayderC/w-chat-backend/tree/main
 
 Página principal
 
