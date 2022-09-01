@@ -31,7 +31,6 @@ export const CardRegister = () => {
     const resp = await register(user);
     setButtonText("Registrarme");
     if (resp.msg || !resp) return;
-
     setToken(resp.data.token);
     setProfile(resp.data.user);
     setItemLocalStorage("token", resp.data.token);

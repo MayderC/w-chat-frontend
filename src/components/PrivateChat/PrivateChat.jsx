@@ -15,12 +15,19 @@ export const PrivateChat = () => {
   const windowMsg = useRef();
 
   useEffect(() => {
-    socket.emit("join-global");
-
+    socket.emit("join-global", {username: PROFILE.username, soketid: socket.id});
+  
     socket.on("joined", (response) => {
       const myData = JSON.parse(response);
       setData([...myData.messages]);
     });
+
+    socket.on('online-user-list', (user) => {
+      console.log(user)
+
+    })
+
+    socket.on('disconnect', () => console.log("se desconecta"))
 
     socket.on("message", (msg) => {
       // sokcet no tiene acceso al estado, pero si a la funcion set.

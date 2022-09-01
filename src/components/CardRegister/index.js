@@ -11,7 +11,6 @@ export const useCardRegister = () => {
   const [inputValues, setInputValues] = useState(initialState);
 
   const handleSetInputValue = (propertie, value) => {
-    console.log(propertie);
     if (Object.keys(initialState).includes(propertie)) {
       setInputValues({ ...inputValues, [propertie]: value });
     }

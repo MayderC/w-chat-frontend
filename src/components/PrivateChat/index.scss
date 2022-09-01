@@ -7,7 +7,8 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-
+  position: relative;
+  z-index: 10;
   max-height: calc(100vh - 220px);
   overflow-y: scroll;
 }
@@ -21,5 +22,5 @@
   opacity: 0.08;
   height: calc(100vh - 200px);
   max-height: calc(100vh - 200px);
-  z-index: -1;
+  z-index: 0;
 }
