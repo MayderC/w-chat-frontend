@@ -22,6 +22,7 @@
   overflow-y: scroll;
   max-height: calc(100vh - 194px);
 }
+
 /*
 ::-webkit-scrollbar {
   display: none;
@@ -36,16 +37,18 @@
   justify-content: center;
 }
 
-.sidebar__search__friends > .input__form--border > input {
-  width: 475px;
+.sidebar__search__friends>.input__form--border>input {
+  max-width: 475px;
 }
 
 .topbar {
   grid-area: topbar;
 }
+
 .sidebar {
   grid-area: sidebar;
 }
+
 .chat {
   max-height: calc(100vh - 46px);
   position: relative;

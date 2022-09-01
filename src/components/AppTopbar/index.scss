@@ -6,9 +6,20 @@
   color: #fff;
   display: flex;
   align-items: center;
+
 }
 
 .topbar_chat p {
   cursor: pointer;
   font-size: 1.5rem;
+}
+
+.profile-container {
+  width: 50px;
+  margin-right: 20px;
+}
+
+.profile-container img {
+  display: block;
+  max-width: 100%;
 }
