@@ -3,7 +3,7 @@
   position: relative;
 }
 .messages_container {
-  padding: 40px 80px;
+  padding: 40px 40px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -11,6 +11,7 @@
   z-index: 10;
   max-height: calc(100vh - 220px);
   overflow-y: scroll;
+  max-width: inherit;
 }
 
 .private__main::before {

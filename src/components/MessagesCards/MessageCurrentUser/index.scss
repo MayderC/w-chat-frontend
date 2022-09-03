@@ -1,18 +1,26 @@
 .msg_current_user {
-  background-color: #005c4b;
   align-self: end;
-  width: 430px;
-  height: auto;
-  border-radius: 10px;
-  padding: 0.3rem 1rem;
+  background-color: #005c4b;
+  border-radius: 5px;
   font-weight: bold;
+  max-width: 430px;
+  width: auto;
+  box-sizing: border-box;
+  padding: 10px 20px;
 }
 
 .msg_current_user > .username {
   color: rgb(168, 168, 168);
+
 }
 
-.msg_current_user > .msg {
+.msg{
+
+}
+
+.text-msg {
   color: rgb(255, 255, 255);
   font-size: 1rem;
+  max-width: 100%;
+  word-wrap: break-word;
 }

@@ -10,9 +10,10 @@ export const AppTopbar = () => {
     <>
       <nav className="topbar_chat">
         <div className="profile-container">
-          <img src={profileDefault} alt=""/>
+          <div className="profile-item-img"><img src={profileDefault} alt=""/></div>
+          <div className="profile-item-name"><p>{context.PROFILE.username}</p></div>
         </div>
-        <p>{context.PROFILE.username}</p>
+        <div className="toggle-chat">click</div>
       </nav>
     </>
   );

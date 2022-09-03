@@ -13,6 +13,8 @@ export const InputMessage = ({ props }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    
     socket.emit("send-message", Message, (msg) => {
       props.handleSetnewMessage(msg);
     });

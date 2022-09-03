@@ -5,7 +5,7 @@ export const MessageAnotherUser = ({ prop }) => {
     <>
       <div className="msg_another_user">
         <p className="username">{prop.username}</p>
-        <p className="msg">{prop.message}</p>
+        <div className="msg"><p>{prop.message}</p></div>
       </div>
     </>
   );

@@ -42,7 +42,7 @@ export const App = () => {
         <Route path="/auth" element={<AuthPage></AuthPage>}></Route>
 
         <Route
-          path="/app/*"
+          path="/app"
           element={
             <SocketProvider>
               <WindowMain />
@@ -50,7 +50,8 @@ export const App = () => {
           }
         >
           <Route index element={<AppChatview></AppChatview>}></Route>
-          <Route path=":id" element={<PrivateChat></PrivateChat>}></Route>
+          <Route path="global" element={<PrivateChat></PrivateChat>}></Route>
+          <Route path="chat" element={<PrivateChat></PrivateChat>}></Route>
         </Route>
       </Routes>
     </div>

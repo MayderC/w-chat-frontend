@@ -1,10 +1,8 @@
 .card__friendchat {
-  border-top: 1px solid rgba(128, 128, 128, 0.5);
-  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
-  height: 80px;
-  width: 100%;
+  border-bottom: 0.5px solid rgb(63, 90, 89);
+  height: 70px;
   display: flex;
-  padding: 10px 20px;
+  padding: 10px 10px;
   align-items: center;
 }
 
@@ -20,7 +18,6 @@
 
 .card__info {
   height: 70px;
-  width: 409px;
   padding: 0 0 0 20px;
   position: relative;
   display: flex;
@@ -35,7 +32,7 @@
 }
 
 .card__info > .message_preview {
-  width: 85%;
+  max-width: 320px;
   height: 20px;
   white-space: nowrap;
   text-overflow: ellipsis;

@@ -7,11 +7,10 @@ import "./index.scss";
 
 export const WindowMain = () => {
   const handleSetInputValue = (value) => {};
-  const test = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+  const test = [1,2,3,4,5,6];
   return (
     <>
       <main className="window-main">
-        <div className="topbar"></div>
         <div className="sidebar">
           <AppSidebar>
             <AppTopbar></AppTopbar>
@@ -20,8 +19,9 @@ export const WindowMain = () => {
                 props={{
                   handleSetInputValue,
                   placeholder: "Search a friend",
+                  background: "#202c33"
                 }}
-              ></InputForm>
+                ></InputForm>
             </div>
             <div className="friends__chat_container">
               {test.length > 0 &&

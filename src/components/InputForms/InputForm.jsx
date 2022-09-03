@@ -20,6 +20,7 @@ export const InputForm = ({ props }) => {
           onChange={(event) =>
             handleSetInputValue(propInState, event.target.value)
           }
+          style={{background: `${props.background ? props.background : 'none'}`}}
           value={props.value}
           type={props.type}
           placeholder={props.placeholder}

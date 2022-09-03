@@ -7,10 +7,26 @@
   align-items: center;
   justify-content: end;
   //box-shadow: inset 0 0 10px #000000;
+  justify-content: space-between;
 }
 
+.users-online{
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-.chat__topbar div {
+.users-icon{
+  width: 20px;
+}
+
+.users-icon img {
+  display: block;
+  max-width: 100%;
+}
+
+.chat__topbar .get-out {
   color: #fff;
   padding: 0.3rem 1rem;
   background-color: #005c4b;
@@ -18,7 +34,7 @@
   cursor: pointer;
 }
 
-.chat__topbar div:hover {
+.chat__topbar .get-out:hover {
 
   transform: scale(1.1);
   transition: .2s;

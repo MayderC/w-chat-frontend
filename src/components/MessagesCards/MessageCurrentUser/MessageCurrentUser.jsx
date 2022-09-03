@@ -4,8 +4,7 @@ export const MessageCurrentUser = ({ prop }) => {
   return (
     <>
       <div className="msg_current_user">
-        <p className="username">Me : {prop.username}</p>
-        <p className="msg">{prop.message}</p>
+        <div className="msg"><p className="text-msg">{prop.message}</p></div>
       </div>
     </>
   );

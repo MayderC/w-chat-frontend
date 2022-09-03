@@ -1,4 +1,6 @@
 .sidebar_chat {
   background-color: #111b21;
   max-height: calc(100vh - 46px);
+  height: calc(100vh - 46px);
+  border-right: 0.5px solid rgb(63, 90, 89);
 }

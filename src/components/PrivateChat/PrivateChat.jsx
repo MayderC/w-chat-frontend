@@ -14,40 +14,51 @@ export const PrivateChat = () => {
   const [newMsg, setNewMsg] = useState({});
   const windowMsg = useRef();
 
+
   useEffect(() => {
+
+    //global si
+    // private no
     socket.emit("join-global", {username: PROFILE.username, soketid: socket.id});
-  
+    //global si
+    // private no
     socket.on("joined", (response) => {
       const myData = JSON.parse(response);
       setData([...myData.messages]);
     });
 
+    //  global si
+    //  private no
     socket.on('online-user-list', (user) => {
       console.log(user)
 
     })
 
+    //  global si
+    //  private si
     socket.on('disconnect', () => console.log("se desconecta"))
 
+    //  global si
+    //  private si
     socket.on("message", (msg) => {
       // sokcet no tiene acceso al estado, pero si a la funcion set.
       // se setea un nuevo valor, y se observa el estado (newMsg) en el siguiente UseEffect, cuando cambia se inserta al array de mensajes
       setNewMsg({ ...JSON.parse(msg) });
     });
-
-    document
-      .getElementById("windowMsg")
-      .scrollTo(0, document.getElementById("windowMsg").scrollHeight);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
+    //  global si
+    //  private si
     document
       .getElementById("windowMsg")
       .scrollTo(0, document.getElementById("windowMsg").scrollHeight);
   }, [data]);
 
   useEffect(() => {
+    //  global si
+    //  private si
     setData((data) => [...data, newMsg]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [newMsg]);
