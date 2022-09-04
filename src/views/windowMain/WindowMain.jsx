@@ -1,18 +1,22 @@
+import { useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { AppSidebar } from "../../components/AppSidebar/AppSidebar";
 import { AppTopbar } from "../../components/AppTopbar/AppTopbar";
 import { CardFriendChat } from "../../components/CardFriedChat/CardFriendChat";
 import { InputForm } from "../../components/InputForms/InputForm";
+import {Context} from '../../context/appRef/appRefContext' 
 import "./index.scss";
 
 export const WindowMain = () => {
   const handleSetInputValue = (value) => {};
   const test = [1,2,3,4,5,6];
+  const {setRef} = useContext(Context)
+
   return (
     <>
       <main className="window-main">
-        <div className="sidebar">
-          <AppSidebar>
+        <div ref={(ref) => setRef(ref)} className="sidebar">
+          <AppSidebar >
             <AppTopbar></AppTopbar>
             <div className="sidebar__search__friends">
               <InputForm

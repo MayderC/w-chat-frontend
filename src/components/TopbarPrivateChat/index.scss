@@ -5,19 +5,20 @@
   display: flex;
   padding: 0 2rem;
   align-items: center;
-  justify-content: end;
-  //box-shadow: inset 0 0 10px #000000;
+  justify-content: flex-end;
+  border-bottom: solid 0.5px rgb(63, 90, 89);
+
   justify-content: space-between;
 }
 
-.users-online{
+.users-online {
   color: #fff;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.users-icon{
+.users-icon {
   width: 20px;
 }
 

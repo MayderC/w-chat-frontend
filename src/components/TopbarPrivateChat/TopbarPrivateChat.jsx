@@ -3,14 +3,15 @@ import { useContext } from "react";
 import { socketContext } from "../../context/socket/SocketContext";
 import { useNavigate } from "react-router-dom";
 import user from '../../assets/img/user.svg'
+import { Context } from '../../context/appRef/appRefContext';
 
 export const TopbarPrivateChat = () => {
   let navigate = useNavigate();
   const { socket } = useContext(socketContext);
+  const {myRef} = useContext(Context)
 
   const handleGetOut = async()  => {
-    socket.disconnect()
-    navigate('/app')
+    myRef.classList.remove('hide')
   }
 
   return (

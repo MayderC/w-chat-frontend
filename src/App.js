@@ -10,6 +10,7 @@ import { verify } from "./api/auth";
 import { Context } from "./context/Context";
 import { SocketProvider } from "./context/socket/SocketProvider";
 import "./assets/sass/index.sass";
+import { AppRefProvider } from './context/appRef/AppRefProvider';
 
 export const App = () => {
   const navigate = useNavigate();
@@ -45,7 +46,9 @@ export const App = () => {
           path="/app"
           element={
             <SocketProvider>
-              <WindowMain />
+              <AppRefProvider>
+                <WindowMain />
+              </AppRefProvider>
             </SocketProvider>
           }
         >

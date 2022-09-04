@@ -7,7 +7,7 @@ import "./index.scss";
 import { Context } from "../../context/Context";
 import { MessageAnotherUser } from "../MessagesCards/MessageAnotherUser/MessageAnotherUser";
 
-export const PrivateChat = () => {
+export const PrivateChat = ({myRef}) => {
   const { socket } = useContext(socketContext);
   const { PROFILE } = useContext(Context);
   const [data, setData] = useState([]);
@@ -16,7 +16,7 @@ export const PrivateChat = () => {
 
 
   useEffect(() => {
-
+    console.log(myRef)
     //global si
     // private no
     socket.emit("join-global", {username: PROFILE.username, soketid: socket.id});

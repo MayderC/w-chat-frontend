@@ -9,18 +9,24 @@
   padding: 10px 20px;
 }
 
-.msg_current_user > .username {
+.msg_current_user>.username {
   color: rgb(168, 168, 168);
 
 }
 
-.msg{
-
-}
 
 .text-msg {
   color: rgb(255, 255, 255);
   font-size: 1rem;
   max-width: 100%;
   word-wrap: break-word;
+}
+
+
+
+@media (max-width: 543px) {
+  .msg_current_user {
+    max-width: 280px;
+
+  }
 }

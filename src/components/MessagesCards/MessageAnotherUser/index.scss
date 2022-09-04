@@ -1,24 +1,29 @@
 .msg_another_user {
+  align-self: start;
   background-color: #202c33;
-  height: auto;
-  border-radius: 10px;
-  padding: 0.3rem 1rem;
+  border-radius: 5px;
   font-weight: bold;
   max-width: 430px;
   width: auto;
+  padding: 10px 20px;
 }
 
-.msg_another_user > .username {
+.msg_another_user>.username {
   color: rgb(168, 168, 168);
 }
 
-.msg_another_user > .msg {
+
+
+.msg>p {
   color: rgb(255, 255, 255);
   font-size: 1rem;
+  word-wrap: break-word;
 }
 
-.msg  > p {
 
-  word-wrap: break-word;
+@media (max-width: 543px) {
+  .msg_another_user {
+    max-width: 280px;
 
+  }
 }
