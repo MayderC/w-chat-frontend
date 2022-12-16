@@ -16,7 +16,7 @@ export const PrivateChat = ({myRef}) => {
 
 
   useEffect(() => {
-    console.log(myRef)
+
     //global si
     // private no
     socket.emit("join-global", {username: PROFILE.username, soketid: socket.id});

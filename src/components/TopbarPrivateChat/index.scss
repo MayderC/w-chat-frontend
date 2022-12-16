@@ -30,9 +30,14 @@
 .chat__topbar .get-out {
   color: #fff;
   padding: 0.3rem 1rem;
-  background-color: #005c4b;
+  //background-color: #005c4b;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.get-out img {
+  width: 35px;
+  height: 35px;
 }
 
 .chat__topbar .get-out:hover {
