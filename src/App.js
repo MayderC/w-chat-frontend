@@ -10,7 +10,7 @@ import { verify } from "./api/auth";
 import { Context } from "./context/Context";
 import { SocketProvider } from "./context/socket/SocketProvider";
 import "./assets/sass/index.sass";
-import { AppRefProvider } from './context/appRef/AppRefProvider';
+import { AppRefProvider } from "./context/appRef/AppRefProvider";
 
 export const App = () => {
   const navigate = useNavigate();
@@ -18,6 +18,7 @@ export const App = () => {
 
   useEffect(() => {
     const token = getToken();
+    console.log({ token });
     if (!token) {
       navigate("/");
     }
@@ -27,7 +28,7 @@ export const App = () => {
           context.setToken(token);
           context.setProfile({ ...res });
           navigate("/app");
-        } else if (res.msg) {
+        } else {
           navigate("/auth");
           clearLocalStorage();
         }

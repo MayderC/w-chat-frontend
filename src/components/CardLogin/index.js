@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../api/auth";
 import { Context } from "../../context/Context";
@@ -16,9 +16,9 @@ export const UseCardLogin = () => {
   const [inputsValue, setInputsValue] = useState(initialSatate);
   const [btnText, setBtnText] = useState("Login");
 
-  const handleSetInputValue = (propertie, value) => {
-    if (Object.keys(inputsValue).includes(propertie)) {
-      setInputsValue({ ...inputsValue, [propertie]: value });
+  const handleSetInputValue = (property, value) => {
+    if (Object.keys(inputsValue).includes(property)) {
+      setInputsValue({ ...inputsValue, [property]: value });
     }
   };
 
